@@ -8,7 +8,6 @@ const { mongo } = require("./vars");
  * @public
  */
 exports.connect = () => {
-  console.log("mongoose", mongo.uri);
   mongoose
     .connect(mongo.uri, {
       useNewUrlParser: true,
