@@ -18,12 +18,25 @@ var transporter=nodemailer.createTransport({
     rejectUnauthorized:false
   }
 })
+const validateEmail = (Email) => {
+  return String(Email)
+    .toLowerCase()
+    .match(
+      /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+    );
+};
 exports.register = async (req, res, next) => {
   try {
     const { Name,Email,Password} = req.body;
     if(!Name || !Email || !Password){
     res.json("Please add all fields")
-  } 
+  }
+  if(Password.length < 8) {
+    return res.status(400).send({status: false, message: "Password should be at least 8 characters!"})
+}
+if(!validateEmail(email)) {
+  return res.status(400).send({status: false, message: "Please enter valid email"})
+}
   const userExists=await User.findOne({Email})
   if(userExists){
     res.json("Gmail already Exists")

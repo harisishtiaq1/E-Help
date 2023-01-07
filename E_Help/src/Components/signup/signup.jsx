@@ -5,9 +5,9 @@ import { useNavigate } from 'react-router-dom';
 import {useDispatch} from "react-redux"
 import {register} from "../../slices/auth/authSlice"
 function Signup() {
-    const [name,setName]=useState("");
-    const [email,setEmail]=useState("");
-    const [password,setPassword]=useState("");
+    const [Name,setName]=useState("");
+    const [Email,setEmail]=useState("");
+    const [Password,setPassword]=useState("");
     const nevigate=useNavigate();
     const dispatch=useDispatch();
     const login=()=>{
@@ -16,7 +16,7 @@ function Signup() {
       }
       const onSubmit=(e)=>{
         e.preventDefault();
-        dispatch(register({name,email,password}));
+        dispatch(register({Name,Email,Password}));
         setName("");
         setEmail("")
         setPassword("");
@@ -32,7 +32,7 @@ function Signup() {
                                 type="text"
                                 className="form-control"
                                 placeholder="Name"
-                               value={name}
+                               value={Name}
                                onChange={(e)=>setName(e.target.value)}
                                name="name"
                             />
@@ -42,7 +42,7 @@ function Signup() {
                                 type="email"
                                 className="form-control"
                                 placeholder="Email Address"
-                                value={email}
+                                value={Email}
                                onChange={(e)=>setEmail(e.target.value)}
                                name="email"
                             />
@@ -52,7 +52,7 @@ function Signup() {
                                 type="password"
                                 placeholder="Password"
                                 className="form-control"
-                                value={password}
+                                value={Password}
                                onChange={(e)=>setPassword(e.target.value)}
                                name="password"
                             />

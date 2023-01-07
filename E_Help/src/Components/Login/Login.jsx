@@ -5,8 +5,8 @@ import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { login } from "../../slices/auth/authSlice";
 function Login() {
-  const [email,setEmail]=useState("");
-    const [password,setPassword]=useState("");
+  const [Email,setEmail]=useState("");
+    const [Password,setPassword]=useState("");
   const navigate = useNavigate();
   const dispatch=useDispatch();
   const signup = () => {
@@ -19,7 +19,7 @@ function Login() {
   };
   const onSubmit=(e)=>{
     e.preventDefault();
-    dispatch(login({email,password}));
+    dispatch(login({Email,Password}));
     setEmail("")
     setPassword("");
   }
@@ -33,7 +33,7 @@ function Login() {
             Email Address:<input
                 type="email"
                 className="form-control"
-                value={email}
+                value={Email}
                 onChange={(e)=>setEmail(e.target.value)}
                 name="email"
               />
@@ -43,7 +43,7 @@ function Login() {
                 type="password"
                 className="form-control"
                 id="exampleInputPassword1"
-                value={password}
+                value={Password}
                 onChange={(e)=>setPassword(e.target.value)}
                 name="password"
               />
