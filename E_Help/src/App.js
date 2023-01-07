@@ -11,20 +11,20 @@ import Question from "./Components/Question/Question"
 import Answer from "./Components/Answer/Answer";
 function App() {
   return (
-    // <>
-    //   <Routes>
-    //     <Route path="/" exact={true} element={<Login/>} />
-    //     <Route path="/Signup" exact={true} element={<Signup/>} />
-    //     <Route path="/Forgot" exact={true} element={<Forgot/>} />
-    //     <Route path="/" exact={true} element={<Forgot/>} />
-    //     <Route path="/reset" exact={true} element={<Reset/>}/>
-    //   </Routes>
-    // </>
+    <>
+      <Routes>
+        <Route path="/" exact={true} element={<Login/>} />
+        <Route path="/Signup" exact={true} element={<Signup/>} />
+        <Route path="/Forgot" exact={true} element={<Forgot/>} />
+        <Route path="/" exact={true} element={<Forgot/>} />
+        <Route path="/reset" exact={true} element={<Reset/>}/>
+      </Routes>
+    </>
     // <Profile/>
     // <Question/>
     // <Login/>
     // <ContactUS/>
-    <div>Haris</div>
+
   );
 }
 export default App;
