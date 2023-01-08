@@ -82,5 +82,4 @@ const onSubmit=(e)=>{
 </div>
   )
 }
-
 export default ContactUs;
