@@ -34,7 +34,7 @@ exports.register = async (req, res, next) => {
   if(Password.length < 8) {
     return res.status(400).send({status: false, message: "Password should be at least 8 characters!"})
 }
-if(!validateEmail(email)) {
+if(!validateEmail(Email)) {
   return res.status(400).send({status: false, message: "Please enter valid email"})
 }
   const userExists=await User.findOne({Email})
