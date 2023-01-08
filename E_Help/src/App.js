@@ -11,6 +11,7 @@ import Question from "./Components/Question/Question"
 import Answer from "./Components/Answer/Answer";
 import 'react-toastify/dist/ReactToastify.css';
 import { Toaster } from "react-hot-toast";
+import UpdateProfile from "./Components/UpdateProfile/UpdateProfile";
 function App() {
   return (
   // <>
@@ -25,10 +26,10 @@ function App() {
   //     </Routes>
   //   </>
     // <Profile/>
-    <Question/>
+    // <Question/>
     // <Login/>
     // <ContactUS/>
-
+    <UpdateProfile/>
   );
 }
 export default App;
