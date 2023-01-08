@@ -34,6 +34,14 @@ catch(error){
  console.log(error);
 }
 })
+export const question=createAsyncThunk("auth/question",async(question)=>{
+    try{
+        return await authservice.question(question)
+    }
+    catch(error){
+        console.log(error);
+    }
+})
 export const authSlice=createSlice({
     name:'auth',
     initialState,
@@ -86,6 +94,18 @@ export const authSlice=createSlice({
         state.isError=false
         state.user=action.payload
     })
+    .addCase(question.rejected,(state,action)=>{
+        state.isLoading=false
+        state.isError=true
+        state.user=null
+        state.user=action.payload
+    })
+    .addCase(question.fulfilled,(state,action)=>{
+        state.isLoading=false
+        state.isError=false
+        state.user=action.payload
+    })
+    
     
     }
 })

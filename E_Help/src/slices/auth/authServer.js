@@ -1,5 +1,6 @@
 import axios from "axios";
 
+
 const api_url="http://localhost:8000/v1/front/auth/"
 // Register user
 
@@ -21,11 +22,17 @@ return response.data
 const contact=async(contactData)=>{
     console.log(contactData);
 const response=await axios.post(api_url+"contact",contactData)
-return response.data
+return response.contactData
+}
+const question=async(questionData)=>{
+    console.log(questionData);
+    const response=await axios.post(api_url+"question",questionData)
+    return response.questionData
 }
 const authservice={
     Register,
     login,
-    contact
+    contact,
+    question
 }
 export default authservice;
