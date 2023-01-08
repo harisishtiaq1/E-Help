@@ -1,5 +1,6 @@
 const User = require("../../models/users.model")
 const Contact=require("../../models/Contact.model")
+const Question=require("../../models/Question.model")
 const bcrypt=require("bcryptjs")
 const nodemailer=require("nodemailer")
 const crypto=require("crypto")
@@ -144,6 +145,27 @@ exports.contact=async(req,res)=>{
   }
   catch(error){
     console.log(error);
-  }
+  }}
+  exports.question=async(req,res)=>{
+    try{
+      const {Title,Description}=req.body;
+      const question=await Question.create({
+        Title,
+        Description,
+      })
+      if(question){
+        res.status(201).json({
+          _id:question.id,
+          Title:question.Title,
+          Description:question.Description,
+        })
+      }
+      else{
+        res.json("Invalid Data")
+      }
+    }
+    catch(error){
+      console.log(error);
+    }
   
 }
