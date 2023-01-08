@@ -13,6 +13,10 @@ function Login() {
     let path = "/signup";
     navigate(path);
   };
+  const profile=()=>{
+    let path="/profile";
+    navigate(path);
+  }
   const forget = () => {
     let path = "/Forgot";
     navigate(path);
@@ -53,7 +57,7 @@ function Login() {
                 Forgot Password?
               </a>
             </div>
-            <button type="submit" className="btn mb-3" id="signin-btn">
+            <button onClick={()=>profile()} type="submit" className="btn mb-3" id="signin-btn">
               Sign In
             </button>
             <button type="submit" className="btn mb-3 clr" id="signin-btn">

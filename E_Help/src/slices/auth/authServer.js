@@ -1,7 +1,6 @@
 import axios from "axios";
 
-const api_url="http://localhost:8000/v1/front/auth/";
-
+const api_url="http://localhost:8000/v1/front/auth/"
 // Register user
 
 const Register=async(userData)=>{

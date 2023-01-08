@@ -4,22 +4,48 @@ import {useState} from "react"
 import { useNavigate } from 'react-router-dom';
 import {useDispatch} from "react-redux"
 import {register} from "../../slices/auth/authSlice"
+import { toast } from 'react-hot-toast';
 function Signup() {
     const [Name,setName]=useState("");
     const [Email,setEmail]=useState("");
     const [Password,setPassword]=useState("");
+    const [confirmPassword,setConfirmPassword] = useState('');
     const nevigate=useNavigate();
     const dispatch=useDispatch();
     const login=()=>{
         let path="/";
         nevigate(path);
       }
+      const validateEmail = (Email) => {
+        return String(Email)
+          .toLowerCase()
+          .match(
+            /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+          );
+      };
       const onSubmit=(e)=>{
         e.preventDefault();
-        dispatch(register({Name,Email,Password}));
+        dispatch(register({Name,Email,Password,confirmPassword}));
         setName("");
         setEmail("")
         setPassword("");
+        setConfirmPassword("");
+        if(!Name || !Email || !Password || !confirmPassword) {
+            toast.error("Please fill all fields");
+            return
+        }
+        if(Password.length < 8) {
+            return toast.error("Password should be at least 8 characters!")
+        }
+        if(!validateEmail(Email)) {
+            return toast.error("Please enter valid email")
+        }
+        if(Password !== confirmPassword) {
+            return toast.error("Password should be same as confirm password")
+        }
+        else{
+            return toast.success("User registered Successfully")
+        }
       }
     return (
         <div className="container-fluid">
@@ -54,6 +80,16 @@ function Signup() {
                                 className="form-control"
                                 value={Password}
                                onChange={(e)=>setPassword(e.target.value)}
+                               name="password"
+                            />
+                        </div>
+                        <div className="mb-3">
+                            <input
+                                type="password"
+                                placeholder="Confirm Password"
+                                className="form-control"
+                                value={confirmPassword}
+                               onChange={(e)=>setConfirmPassword(e.target.value)}
                                name="password"
                             />
                         </div>
