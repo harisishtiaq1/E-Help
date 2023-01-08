@@ -4,28 +4,49 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { login } from "../../slices/auth/authSlice";
+import { toast } from "react-hot-toast";
 function Login() {
   const [Email,setEmail]=useState("");
-    const [Password,setPassword]=useState("");
+  const [Password,setPassword]=useState("");
   const navigate = useNavigate();
   const dispatch=useDispatch();
   const signup = () => {
     let path = "/signup";
     navigate(path);
   };
-  const profile=()=>{
-    let path="/profile";
-    navigate(path);
-  }
+  // const profile=()=>{
+  //   let path="/profile";
+  //   navigate(path);
+  // }
   const forget = () => {
     let path = "/Forgot";
     navigate(path);
+  };
+  const validateEmail = (Email) => {
+    return String(Email)
+      .toLowerCase()
+      .match(
+        /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+      );
   };
   const onSubmit=(e)=>{
     e.preventDefault();
     dispatch(login({Email,Password}));
     setEmail("")
     setPassword("");
+    if(!Email || !Password) {
+      toast.error("Please fill all fields");
+      return
+  }
+  if(Password.length < 8) {
+      return toast.error("Password should be at least 8 characters!")
+  }
+  if(!validateEmail(Email)) {
+      return toast.error("Please enter valid email")
+  }
+  else{
+      return toast.success("User Logged in")
+  }
   }
   return (
     <div className="container-fluid">
@@ -57,7 +78,7 @@ function Login() {
                 Forgot Password?
               </a>
             </div>
-            <button onClick={()=>profile()} type="submit" className="btn mb-3" id="signin-btn">
+            <button  type="submit" className="btn mb-3" id="signin-btn">
               Sign In
             </button>
             <button type="submit" className="btn mb-3 clr" id="signin-btn">

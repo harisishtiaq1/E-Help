@@ -14,16 +14,13 @@ import { Toaster } from "react-hot-toast";
 function App() {
   return (<>
     <Toaster/>
-    
       <Routes>
-   
         <Route path="/" exact={true} element={<Login/>} />
         <Route path="/profile" exact={true} element={<Profile/>}/>
         <Route path="/Signup" exact={true} element={<Signup/>} />
         <Route path="/Forgot" exact={true} element={<Forgot/>} />
         <Route path="/" exact={true} element={<Forgot/>} />
         <Route path="/reset" exact={true} element={<Reset/>}/>
-      
       </Routes>
     </>
     // <Profile/>
