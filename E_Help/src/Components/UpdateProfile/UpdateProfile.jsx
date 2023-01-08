@@ -6,7 +6,6 @@ function UpdateProfile() {
         <div className='d-flex align-items-center justify-content-center'>
             <h1>Profile Update</h1>
         </div>
-        
     </div>
   )
 }
