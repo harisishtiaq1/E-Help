@@ -1,4 +1,5 @@
-const User = require("../../models/users.model");
+const User = require("../../models/users.model")
+const Contact=require("../../models/Contact.model")
 const bcrypt=require("bcryptjs")
 const nodemailer=require("nodemailer")
 const crypto=require("crypto")
@@ -120,4 +121,29 @@ exports.login = async (req,res)=>{
   catch(error){
     console.log(error);
   }
+}
+exports.contact=async(req,res)=>{
+  try{
+    const {Name,Email,Message}=req.body;
+    const contact=await Contact.create({
+      Name,
+      Email,
+      Message,
+    })
+    if(contact){
+      res.status(201).json({
+        _id:contact.id,
+        Name:contact.Name,
+        Email:contact.Email,
+        Message:contact.Message
+      })
+    }
+    else{
+      res.json("Invalid Data")
+    }
+  }
+  catch(error){
+    console.log(error);
+  }
+  
 }

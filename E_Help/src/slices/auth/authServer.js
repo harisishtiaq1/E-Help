@@ -18,8 +18,14 @@ if (response.data)
 }    
 return response.data
 }
+const contact=async(contactData)=>{
+    console.log(contactData);
+const response=await axios.post(api_url+"contact",contactData)
+return response.data
+}
 const authservice={
     Register,
-    login
+    login,
+    contact
 }
 export default authservice;
