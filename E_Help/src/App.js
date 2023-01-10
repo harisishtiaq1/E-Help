@@ -27,9 +27,9 @@ function App() {
   //   </>
     // <Profile/>
     // <Question/>
-    // <Login/>
+    <Login/>
     // <ContactUS/>
-    <UpdateProfile/>
+    // <UpdateProfile/>
   );
 }
 export default App;

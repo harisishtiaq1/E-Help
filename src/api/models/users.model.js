@@ -5,13 +5,13 @@ const mongoose = require('mongoose');
  * @private
  */
 const UserSchema = new mongoose.Schema({
-  Name: { type: String },
-  Email:{type:String,unique:true},
-  Password:{type:String},
-  isVerified:{type:Boolean},
-  emailToken:{type:String}
-}, { timestamps: true }
-);
+    Name: { type: String },
+    Email: { type: String, unique: true },
+    Password: { type: String },
+    isVerified: { type: Boolean },
+    emailToken: { type: String },
+    image: { type: String }
+}, { timestamps: true });
 /**
  * @typedef User
  */

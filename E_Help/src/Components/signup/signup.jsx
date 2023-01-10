@@ -10,6 +10,7 @@ function Signup() {
     const [Email,setEmail]=useState("");
     const [Password,setPassword]=useState("");
     const [confirmPassword,setConfirmPassword] = useState('');
+    const [img,setnewimg]=useState("");
     const nevigate=useNavigate();
     const dispatch=useDispatch();
     const login=()=>{
@@ -25,11 +26,18 @@ function Signup() {
       };
       const onSubmit=(e)=>{
         e.preventDefault();
-        dispatch(register({Name,Email,Password,confirmPassword}));
+        const formData = new FormData();
+    formData.append("Name", Name);
+    formData.append("Email", Email);
+    formData.append("Password", Password);
+    formData.append("ConfirmPassword", confirmPassword);
+    formData.append("img", img);
+        dispatch(register(formData));
         setName("");
         setEmail("")
         setPassword("");
         setConfirmPassword("");
+        setnewimg("")
         if(!Name || !Email || !Password || !confirmPassword) {
             toast.error("Please fill all fields");
             return
