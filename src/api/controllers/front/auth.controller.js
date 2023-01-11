@@ -52,7 +52,6 @@ exports.register = async(req, res, next) => {
         if (!Name || !Email || !Password) {
             res.json("Please add all fields")
         }
-
         if (Password.length < 8) {
             return res.status(400).send({ status: false, message: "Password should be at least 8 characters!" })
         }
