@@ -10,7 +10,7 @@ function Signup() {
     const [Email,setEmail]=useState("");
     const [Password,setPassword]=useState("");
     const [confirmPassword,setConfirmPassword] = useState('');
-    const [img,setnewimg]=useState("");
+    const [image,setimage]=useState("");
     const nevigate=useNavigate();
     const dispatch=useDispatch();
     const login=()=>{
@@ -31,14 +31,14 @@ function Signup() {
     formData.append("Email", Email);
     formData.append("Password", Password);
     formData.append("ConfirmPassword", confirmPassword);
-    formData.append("img", img);
+    formData.append("image", image);
         dispatch(register(formData));
         setName("");
         setEmail("")
         setPassword("");
         setConfirmPassword("");
-        setnewimg("")
-        if(!Name || !Email || !Password || !confirmPassword) {
+        setimage("")
+        if(!Name || !Email || !Password || !confirmPassword || !image) {
             toast.error("Please fill all fields");
             return
         }
@@ -91,6 +91,16 @@ function Signup() {
                                name="password"
                             />
                         </div>
+                        {/* <div className="mb-3">
+                            <input
+                                type="file"
+                                placeholder="Password"
+                                className="form-control"
+                                value={image}
+                               onChange={(e)=>setimage(e.target.value)}
+                               name="image"
+                            />
+                        </div> */}
                         <div className="mb-3">
                             <input
                                 type="password"
