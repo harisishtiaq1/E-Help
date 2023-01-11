@@ -18,20 +18,26 @@ import ViewQuestion from "./Components/ViewQuestion";
 import Stackoverflow from "./Components/Stackoverflow";
 function App() {
   return (
-  // <>
-  //   <Toaster/>
-  //     <Routes>
-  //       <Route path="/" exact={true} element={<Login/>} />
-  //       <Route path="/profile" exact={true} element={<Profile/>}/>
-  //       <Route path="/Signup" exact={true} element={<Signup/>} />
-  //       <Route path="/Forgot" exact={true} element={<Forgot/>} />
-  //       <Route path="/" exact={true} element={<Forgot/>} />
-  //       <Route path="/reset" exact={true} element={<Reset/>}/>
-  //     </Routes>
-  //   </>
+  <>
+    <Toaster/>
+    <Header/>
+  
+      <Routes>
+        <Route path="/" exact={true} element={<Login/>} />
+        <Route path="/profile" exact={true} element={<Profile/>}/>
+        <Route path="/Signup" exact={true} element={<Signup/>} />
+        <Route path="/Forgot" exact={true} element={<Forgot/>} />
+        <Route path="/" exact={true} element={<Forgot/>} />
+        <Route path="/reset" exact={true} element={<Reset/>}/>
+        <Route path="/add-question" exact={true} element={<Question/>}/>
+        <Route path="/question" exact={true} element={<ViewQuestion/>}/>
+        <Route path="/Stackoverflow" exact={true} element={<Stackoverflow/>}/>
+        {/* <Route path="/Header" exact={true} element={<Header/>}/> */}
+      </Routes>
+    </>
     // <Profile/>
     // <Question/>
-    <Login/>
+    // <Login/>
     // <ContactUS/>
     // <UpdateProfile/>
     // <Header />
