@@ -23,13 +23,14 @@ function Header() {
                     <input type = 'text' placeholder="Search..." />
                 </div>
             </div>
+            
             <div className="header-right">
             <div className="header-right-container">
-              <Avatar className="icon" /> 
+              < div className="icon" /> 
               <AiOutlineInbox size={25} className="icon"/>
               <svg
               aria-hidden="true"
-              class="svg-icon iconStackExchange"
+              className="svg-icon iconStackExchange"
               width="24"
               height="24"
               viewBox="0 0 18 18"

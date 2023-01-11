@@ -2,6 +2,7 @@ import React from 'react';
 import './css/index.css';
 import Sidebar from './sidebar';
 import Main from './Main';
+import Header from '../Header/Header';
 
 
 function index(){
