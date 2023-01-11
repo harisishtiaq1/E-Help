@@ -1,19 +1,27 @@
 import React from "react";
 import './css/Header.css';
-import {Avatar} from "@mui/material";
+import {Avatar} from "@mui/material"
 import { AiOutlineInbox } from "react-icons/ai";
 import { AiOutlineSearch } from "react-icons/ai";
-import {Link} from "react-router-dom";
+import {Link, useNavigate} from "react-router-dom";
+import logo from "../Header/img/logo.jpeg"
 
 function Header() {
+  const navigate=useNavigate();
+  const signin=()=>{
+    let path="/login"
+    navigate(path);
+  }
+  const signup = () => {
+    let path = "/signup";
+    navigate(path);
+  };
     return (
         <header>
           <div className="header-container">
             <div className="header-left">
                 <Link to = '/Stackoverflow'>  
-                <img src = "https://upload.wikimedia.org/wikipedia/commons/thumb/0/02/Stack_Overflow_logo.svg/220px-Stack_Overflow_logo.svg.png" alt = 'logo' />
-                {/* <img src = {require(".../images/logo.png")} alt = 'logo' /> */}
-               
+                <img src = {logo} alt = 'logo' />
                </Link>
                 <h3>AboutUs</h3>
             </div>
@@ -23,7 +31,12 @@ function Header() {
                     <input type = 'text' placeholder="Search..." />
                 </div>
             </div>
-            
+            <div className="text-center">
+                            <span><a onClick={()=>signin()} href="">Sign In</a></span>
+                        </div>
+                        <div className="text-center">
+                            <span><a onClick={()=>signup()} href="">Signup</a></span>
+                        </div>
             <div className="header-right">
             <div className="header-right-container">
               < div className="icon" /> 

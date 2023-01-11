@@ -23,15 +23,10 @@ function App() {
     <Header/>
   
       <Routes>
-        {/* <Route path="/" exact={true} element={<Login/>} /> */}
-        <Route path="/profile" exact={true} element={<Profile/>}/>
-        <Route path="/Signup" exact={true} element={<Signup/>} />
-        <Route path="/Forgot" exact={true} element={<Forgot/>} />
-        {/* <Route path="/" exact={true} element={<Forgot/>} /> */}
-        <Route path="/reset" exact={true} element={<Reset/>}/>
-         <Route path="/add-question" exact={true} element={<Question/>}/>
-        <Route path="/question" exact={true} element={<ViewQuestion/>}/>
-        <Route path="/" exact={true} element={<Stackoverflow/>}/> */
+      <Route path="/" exact={true} element={<Stackoverflow/>}/>
+        <Route path="/login" exact={true} element={<Login/>} />
+        <Route path="/signup" exact={true} element={<Signup/>}/>
+        <Route path="/add-question" exact={true} element={<Question/>}/>
       </Routes>
     </>
     // <Profile/>

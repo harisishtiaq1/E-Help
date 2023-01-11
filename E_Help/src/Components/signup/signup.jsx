@@ -119,7 +119,7 @@ function Signup() {
                         Sign up With Google
                         </button>
                         <div className="text-center">
-                            <span>Already have an account? <a onClick={()=>login()} href="">Login</a></span>
+                            <span>Already have an account? <a href="">Login</a></span>
                         </div>
                     </form>
                 </div>
