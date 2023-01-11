@@ -20,7 +20,7 @@ function Header() {
         <header>
           <div className="header-container">
             <div className="header-left">
-                <Link to = '/Stackoverflow'>  
+                <Link to = '/'>  
                 <img src = {logo} alt = 'logo' />
                </Link>
                 <h3>AboutUs</h3>

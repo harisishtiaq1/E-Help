@@ -26,7 +26,7 @@ function App() {
       <Route path="/" exact={true} element={<Stackoverflow/>}/>
         <Route path="/login" exact={true} element={<Login/>} />
         <Route path="/signup" exact={true} element={<Signup/>}/>
-        <Route path="/add-question" exact={true} element={<Question/>}/>
+        <Route path="/add-question" element={<Question/>}/>
       </Routes>
     </>
     // <Profile/>

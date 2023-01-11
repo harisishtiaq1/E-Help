@@ -15,10 +15,10 @@ function Main(){
         <div className="main-container">
         <div className="main-top">
             <h2>Allquestions</h2>
-            <Link to = '/add-question'>
-            <button onClick={()=>question()}>
+            <Link to ="/add-question">
+            
                 Ask Question
-            </button>
+            
             </Link>
         </div>
         <div className="main-desc">

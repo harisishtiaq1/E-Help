@@ -1,12 +1,14 @@
 import React from "react";
 import ReactQuill from "react-quill";
 import "react-quill/dist/quill.snow.css";
-import { TagsInput } from 'react-tag-input-component';
+import  TagsInput  from 'react-tag-input-component';
 import "./Question.css";
 
 function Question(){
     return(
-        <div className="add-question">
+        
+        
+         <div className="add-question">
         <div className="add-question-container">
         <div className="head-title">
             <h1>Ask a public question</h1>
@@ -38,19 +40,13 @@ function Question(){
         </div>
         </div>
         <div className="question-option">
-        <div className="title">
-            <h3>
-            Tags
-            </h3>
-            <small>Add up to 5 tags to your question</small>
-            <TagsInput name = "tags" placeHolder="press enter to add new tag"/>
-        </div>
+      
         </div>
         </div>
         </div>
         <button className="button">Add your question</button>
         </div>
-        </div>
+        </div>        
     )
 }
 export default Question;
