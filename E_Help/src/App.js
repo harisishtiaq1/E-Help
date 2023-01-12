@@ -18,23 +18,24 @@ import ViewQuestion from "./Components/ViewQuestion";
 import Stackoverflow from "./Components/Stackoverflow";
 function App() {
   return (
-  <>
-    <Toaster/>
-    <Header/>
+  // <>
+  //   <Toaster/>
+  //   <Header/>
   
-      <Routes>
-      <Route path="/" exact={true} element={<Stackoverflow/>}/>
-        <Route path="/login" exact={true} element={<Login/>} />
-        <Route path="/signup" exact={true} element={<Signup/>}/>
-        <Route path="/add-question" element={<Question/>}/>
-      </Routes>
-    </>
+  //     <Routes>
+  //     <Route path="/" exact={true} element={<Stackoverflow/>}/>
+  //       <Route path="/login" exact={true} element={<Login/>} />
+  //       <Route path="/signup" exact={true} element={<Signup/>}/>
+  //       <Route path="/add-question" element={<Question/>}/>
+  //     </Routes>
+  //   </>
     // <Profile/>
     // <Question/>
     // <Login/>
     // <ContactUS/>
     // <UpdateProfile/>
     // <Header />
+    <Signup/>
   );
 }
 export default App;

@@ -17,7 +17,7 @@ var transporter = nodemailer.createTransport({
     service: "gmail",
     auth: {
         user: "harisharry232@gmail.com",
-        pass: "cewhgiaykiatxcpi"
+        pass: "vxsehcaeacrcopzh"
     },
     tls: {
         rejectUnauthorized: false
@@ -32,23 +32,16 @@ const validateEmail = (Email) => {
 };
 exports.register = async(req, res, next) => {
     try {
-        console.log("req.body", req.body);
         let payload = req.body;
-        console.log("payload", payload);
         if (req.files)
             for (const key in req.files) {
                 var image = req.files[key][0];
-                console.log("image", image)
                 payload[`${key}`] = image.filename;
             }
         let Name = payload.Name;
-        console.log("Name", Name);
         let Email = payload.Email;
-        console.log("Email", Email);
         let Password = payload.Password;
-        console.log("Password", Password);
-        image = image.filename
-        console.log("image", image);
+        image = image.filename;
         if (!Name || !Email || !Password) {
             res.json("Please add all fields")
         }
@@ -78,6 +71,7 @@ exports.register = async(req, res, next) => {
                 _id: user.id,
                 Name: user.Name,
                 Email: user.Email,
+                image:user.image,
                 token: generateToken(user._id)
             })
         } else {

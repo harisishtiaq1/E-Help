@@ -91,16 +91,16 @@ function Signup() {
                                name="password"
                             />
                         </div>
-                        {/* <div className="mb-3">
+                        <div className="mb-3">
                             <input
                                 type="file"
-                                placeholder="Password"
+                                placeholder="image"
                                 className="form-control"
                                 value={image}
                                onChange={(e)=>setimage(e.target.value)}
                                name="image"
                             />
-                        </div> */}
+                        </div>
                         <div className="mb-3">
                             <input
                                 type="password"
@@ -127,5 +127,4 @@ function Signup() {
         </div>
     )
 }
-
 export default Signup
