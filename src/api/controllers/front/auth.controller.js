@@ -101,7 +101,7 @@ exports.register = async(req, res, next) => {
 exports.verify = async(req, res) => {
     try {
         console.log("req = ", req.query)
-        const token = req.query
+        const token = req.headers.token
         const user = await User.findOne({ emailToken: token })
         if (user) {
             user.emailToken = null;
@@ -140,16 +140,6 @@ exports.login = async(req, res) => {
         console.log(error);
     }
 
-}
-exports.logout=async(req,res)=>{
-    try{
-        if(!generateToken){
-            res.json("user has been Loged out")
-        }
-    }
-    catch(error){
-        console.log(error);
-    }
 }
 exports.contact = async(req, res) => {
     try {
