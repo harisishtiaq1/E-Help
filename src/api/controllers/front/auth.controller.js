@@ -101,7 +101,7 @@ exports.register = async(req, res, next) => {
 exports.verify = async(req, res) => {
     try {
         console.log("req = ", req.query)
-        const token = req.headers.token
+        const token = req.query
         const user = await User.findOne({ emailToken: token })
         if (user) {
             user.emailToken = null;

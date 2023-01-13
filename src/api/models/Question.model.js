@@ -14,6 +14,4 @@ const QuestionSchema = new mongoose.Schema({
 /**
  * @typedef QuestionSchema
  */
-
-
 module.exports = mongoose.model('Question', QuestionSchema);
