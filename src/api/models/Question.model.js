@@ -5,7 +5,7 @@ const mongoose = require('mongoose');
  * @private
  */
 const QuestionSchema = new mongoose.Schema({
-  // createdBy: { type: mongoose.Schema.Types.ObjectId,required: true, ref: 'User' },
+  createdBy: { type: mongoose.Schema.Types.ObjectId,required: true, ref: 'User' },
   Title: { type: String,require:true },
   Description:{type:String,require:true},
 }, { timestamps: true }

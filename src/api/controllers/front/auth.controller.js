@@ -100,7 +100,8 @@ exports.register = async(req, res, next) => {
 };
 exports.verify = async(req, res) => {
     try {
-        const token = req.query.token
+        console.log("req = ", req.query)
+        const token = req.headers.token
         const user = await User.findOne({ emailToken: token })
         if (user) {
             user.emailToken = null;
@@ -164,8 +165,9 @@ exports.contact = async(req, res) => {
 }
 exports.question = async(req, res) => {
     try {
-        const { Title, Description } = req.body;
+        const { createdBy, Title, Description } = req.body;
         const question = await Question.create({
+            createdBy,
             Title,
             Description,
         })
