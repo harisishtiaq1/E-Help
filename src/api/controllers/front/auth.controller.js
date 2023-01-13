@@ -33,15 +33,17 @@ const validateEmail = (Email) => {
 exports.register = async(req, res, next) => {
     try {
         let payload = req.body;
+        console.log(payload);
         if (req.files)
             for (const key in req.files) {
-                var image = req.files[key][0];
+                let image = req.files[key][0];
                 payload[`${key}`] = image.filename;
             }
         let Name = payload.Name;
         let Email = payload.Email;
         let Password = payload.Password;
-        image = image.filename;
+        let image = payload.image;
+        console.log(image);
         if (!Name || !Email || !Password) {
             res.json("Please add all fields")
         }

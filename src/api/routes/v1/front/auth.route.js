@@ -13,6 +13,4 @@ router.route("/login").post(controller.login)
 router.route("/contact").post(controller.contact)
 router.route('/question').post(authenticate,controller.question)
 router.route("/edit-profile").put(controller.editProfile)
-
-
 module.exports = router;
