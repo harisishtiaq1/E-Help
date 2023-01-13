@@ -10,6 +10,7 @@ const path = require("path");
 
 router.route('/register').post(cpUpload, controller.register);
 router.route("/verify-email").get(controller.verify);
+router.route("/logout").post(controller.logout)
 router.route("/login").post(controller.login)
 router.route("/contact").post(controller.contact)
 router.route('/question').post(authenticate,controller.question)

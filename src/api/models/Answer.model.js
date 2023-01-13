@@ -5,7 +5,7 @@ const mongoose = require('mongoose');
  * @private
  */
 const AnswerSchema = new mongoose.Schema({
-  Userid:{createdBy:{ref:"User"}},
+  createdBy: { type: mongoose.Schema.Types.ObjectId,required: true, ref: 'User' },
   Questionid:{createdBy:{ref:"User"}},
   Comment: { type: String,require:true },
 }, { timestamps: true }

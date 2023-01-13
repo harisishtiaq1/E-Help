@@ -141,6 +141,16 @@ exports.login = async(req, res) => {
     }
 
 }
+exports.logout=async(req,res)=>{
+    try{
+        if(!generateToken){
+            res.json("user has been Loged out")
+        }
+    }
+    catch(error){
+        console.log(error);
+    }
+}
 exports.contact = async(req, res) => {
     try {
         const { Name, Email, Message } = req.body;
