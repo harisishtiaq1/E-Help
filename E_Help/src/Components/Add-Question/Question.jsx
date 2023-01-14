@@ -86,11 +86,8 @@ const handleSubmit = async (e) => {
             Tags
             </h3>
             <small>Add up to 5 tags to your question</small>
-<<<<<<< HEAD
             <div name = "tags" placeHolder="press enter to add new tag"/>
-=======
             <TagsInput value={tags} onChange={setTags} name = "tags" placeHolder="press enter to add new tag"/>
->>>>>>> 0acad686f2d22be86a1bf2de7aeeb5da50326200
         </div>
         </div>
         </div>
