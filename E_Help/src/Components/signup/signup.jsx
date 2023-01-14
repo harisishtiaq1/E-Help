@@ -93,16 +93,6 @@ function Signup() {
                         </div>
                         <div className="mb-3">
                             <input
-                                type="file"
-                                placeholder="image"
-                                className="form-control"
-                                value={image}
-                               onChange={(e)=>setimage(e.target.value)}
-                               name="image"
-                            />
-                        </div>
-                        <div className="mb-3">
-                            <input
                                 type="password"
                                 placeholder="Confirm Password"
                                 className="form-control"
@@ -111,6 +101,17 @@ function Signup() {
                                name="password"
                             />
                         </div>
+                        <div className="mb-3">
+                            <input
+                                type="file"
+                                placeholder="image"
+                                className="form-control"
+                                value={image}
+                               onChange={(e)=>setimage(e.target.value)}
+                               name="image"
+                            />
+                        </div>
+                        
 
                         <button type="submit" className="btn mb-3" id="signup-btn">
                             Sign Up
