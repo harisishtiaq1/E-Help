@@ -12,10 +12,12 @@ return response.formdata
 // Login User
 const login=async(userData)=>{
 const response=await axios.post(api_url+"login",userData)
-console.log(userData);
+console.log("userData",userData);
 if (response.data)
 {
     localStorage.setItem("user",JSON.stringify(response.data))
+    const getdata = localStorage.getItem("user");
+    console.log("getdata",getdata)
 }    
 return response.data
 }

@@ -6,6 +6,7 @@ import { useDispatch } from "react-redux";
 import { login } from "../../slices/auth/authSlice";
 import { toast } from "react-hot-toast";
 function Login() {
+  const[data,setdata ] = useState(null);
   const [Email,setEmail]=useState("");
   const [Password,setPassword]=useState("");
   const navigate = useNavigate();
@@ -15,8 +16,11 @@ function Login() {
     navigate(path);
   };
   const user=localStorage.getItem("User")
+
   const profile=()=>{
-    if(user){
+    console.log("profile routessss")
+    if(data){
+      console.log("profile route")
       let path="/profile";
       navigate(path);
     }
@@ -36,9 +40,11 @@ function Login() {
         /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
       );
   };
-  const onSubmit=(e)=>{
+  const onSubmit=async(e)=>{
     e.preventDefault();
-    dispatch(login({Email,Password}));
+    const y = await dispatch(login({Email,Password}));
+    console.log("y",y)
+    setdata(y);
     setEmail("")
     setPassword("");
     if(!Email || !Password) {

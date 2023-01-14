@@ -33,17 +33,22 @@ const validateEmail = (Email) => {
 exports.register = async(req, res, next) => {
     try {
         let payload = req.body;
-        console.log(payload);
+        console.log("payload",payload);
+        console.log("req.files",req.files);
         if (req.files)
             for (const key in req.files) {
                 let image = req.files[key][0];
+                console.log("payload image",image);
                 payload[`${key}`] = image.filename;
             }
         let Name = payload.Name;
         let Email = payload.Email;
         let Password = payload.Password;
         let image = payload.image;
-        console.log(image);
+        let base = path.parse(image).base;
+        console.log("base...",base); //python.exe
+        image = base;
+        // console.log(image);
         if (!Name || !Email || !Password) {
             res.json("Please add all fields")
         }
@@ -59,6 +64,7 @@ exports.register = async(req, res, next) => {
         }
         const salt = await bcrypt.genSalt(10)
         const hashPassword = await bcrypt.hash(Password, salt)
+        console.log("hashPassword",hashPassword)
         const user = await User.create({
             Name,
             Email,
@@ -67,7 +73,7 @@ exports.register = async(req, res, next) => {
             emailToken: crypto.randomBytes(64).toString('hex'),
             isVerified: false
         })
-        console.log("user", user)
+         console.log("user...", user)
         if (user) {
             res.status(201).json({
                 _id: user.id,
@@ -102,9 +108,11 @@ exports.register = async(req, res, next) => {
 };
 exports.verify = async(req, res) => {
     try {
-        console.log("req = ", req.query)
-        const token = req.headers.token
+        const token = req.query.token;
+        // const token = req.headers.token
+        console.log("token",token)
         const user = await User.findOne({ emailToken: token })
+        console.log("user",user)
         if (user) {
             user.emailToken = null;
             user.isVerified = true;

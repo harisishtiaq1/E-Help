@@ -8,7 +8,6 @@ import Reset from "./Components/ResetPassword/Reset"
 import ContactUS from "./Components/ContactUS/ContactUs"
 import Profile from "./Components/Profile/Profile";
 // import Question from "./Components/Question/Question"
-import Answer from "./Components/Answer/Answer";
 import 'react-toastify/dist/ReactToastify.css';
 import { Toaster } from "react-hot-toast";
 import UpdateProfile from "./Components/UpdateProfile/UpdateProfile";
@@ -18,24 +17,25 @@ import ViewQuestion from "./Components/ViewQuestion";
 import Stackoverflow from "./Components/Stackoverflow";
 function App() {
   return (
-  // <>
-  //   <Toaster/>
-  //   <Header/>
+  <>
+    <Toaster/>
+    <Header/>
   
-  //     <Routes>
-  //     <Route path="/" exact={true} element={<Stackoverflow/>}/>
-  //       <Route path="/login" exact={true} element={<Login/>} />
-  //       <Route path="/signup" exact={true} element={<Signup/>}/>
-  //       <Route path="/add-question" element={<Question/>}/>
-  //     </Routes>
-  //   </>
+      <Routes>
+      <Route path="/" exact={true} element={<Stackoverflow/>}/>
+        <Route path="/login" exact={true} element={<Login/>} />
+        <Route path="/signup" exact={true} element={<Signup/>}/>
+        <Route path="/add-question" element={<Question/>}/>
+        <Route path="/profile" exact={true} element={<Profile/>}/>
+      </Routes>
+    </>
     // <Profile/>
     // <Question/>
     // <Login/>
     // <ContactUS/>
     // <UpdateProfile/>
     // <Header />
-    <Signup/>
+    // <Signup/>
   );
 }
 export default App;
