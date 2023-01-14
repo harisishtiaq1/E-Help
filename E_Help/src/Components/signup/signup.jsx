@@ -85,6 +85,19 @@ function Signup() {
                                name="password"
                             />
                         </div>
+<<<<<<< HEAD
+=======
+                        <div className="mb-3">
+                            <input
+                                type="file"
+                                placeholder="image"
+                                className="form-control"
+                                value={image}
+                               onChange={(e)=>setimage(e.target.value)}
+                               name="image"
+                            />
+                        </div>
+>>>>>>> 0acad686f2d22be86a1bf2de7aeeb5da50326200
                         <div className="mb-3">
                             <input
                                 type="password"
@@ -113,6 +126,12 @@ function Signup() {
                         <button type="submit" className="btn mb-3 clr" id="signup-btn">
                         Sign up With Google
                         </button>
+<<<<<<< HEAD
+=======
+                        <div className="text-center">
+                            <span>Already have an account? <a href="">Login</a></span>
+                        </div>
+>>>>>>> 0acad686f2d22be86a1bf2de7aeeb5da50326200
                     </form>
                 </div>
             </div>

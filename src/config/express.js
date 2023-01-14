@@ -47,4 +47,12 @@ app.get('/*', function (req, res) {
   res.sendFile(path.join(__dirname, '../../build', 'index.html'));
 });
 
+// headers
+
+app.use((req, res, next) => {
+  res.header('Access-control-allow-origin', "*")
+  res.header('Access-control-allow-headers', "*")
+  next()
+})
+
 module.exports = app;

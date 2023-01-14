@@ -2,7 +2,14 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { AiOutlineUser } from "react-icons/ai";
 import './css/AllQuestions.css';
-function AllQuestions(){
+import ReactHtmlParser from 'react-html-parser'
+function AllQuestions({question}){
+    // console.log(question?.tags[0]);    
+    let tags = JSON.parse(question?.tags[0])
+   function truncate (str, n){
+    return str?.length > n ? str.substr(0, n - 1) + "..." : str;
+   }
+    // const tags = [];
     return(
         <div className="all-questions">
             <div className="all-questions-container">
@@ -13,7 +20,7 @@ function AllQuestions(){
                 <span>Votes</span>
             </div>
             <div className="all-option">
-                <p>0</p>
+                <p>{question?.answerDetails?.length}</p>
                 <span>Answer</span>
             </div>
             <div className="all-option">
@@ -22,36 +29,42 @@ function AllQuestions(){
             </div>
             </div>
             <div className="question-answer">
-                <Link to = "/question">How to use drag and drop in design?</Link>
+                <Link to ={`/question?q=${question?._id}`}>{question.title}</Link>
                 <div style={{
                     widtht: "90%"
                 }}>
                 <div>
-                    What I was is an example about how
-                    to make the drag and drop of
-                    my Table that works properly, but I 
-                    make it works
+                  {ReactHtmlParser(truncate(question?.body, 200))}
                 </div>
             </div>
-            <div style={{
-                display: "flex",
-
-            }}>
-                <span className="quetion-tags">
-                    react
-                </span>
-                <span className="quetion-tags">
-                    ant
-                </span>
-                <span className="quetion-tags">
-                    frontend
-                </span>
-            </div>
+            <div
+            style={{
+              display: "flex",
+            }}
+          >
+            {tags.map((_tag) => (
+              <p
+                style={{
+                  margin: "10px 5px",
+                  padding: "5px 10px",
+                  backgroundColor: "#007cd446",
+                  borderRadius: "3px",
+                }}
+              >
+                {_tag}
+              </p>
+            ))}
+          </div>
             <div className="author">
-                <small>Timestamp</small>
+                <small>{new Date(question?.created_at).toLocaleString()}</small>
                 <div className="author-details">
-                    <AiOutlineUser />
-                    <p>User name</p>
+                    <AiOutlineUser src = {question?.user?.photo} />
+                    {/* <p>{question?.user?.displayName ? question?.user?.displayName :  String (question?.user?.email).split('@')[0]}</p> */}
+                    <p>
+                {question?.user?.displayName
+                  ? question?.user?.displayName
+                  : "Muzammil Iqbal"}
+              </p>
                 </div>
             </div>
             </div>

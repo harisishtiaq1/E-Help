@@ -7,12 +7,17 @@ import Forgot from "./Components/Forgot/Forgot";
 import Reset from "./Components/ResetPassword/Reset"
 import ContactUS from "./Components/ContactUS/ContactUs"
 import Profile from "./Components/Profile/Profile";
+<<<<<<< HEAD
 // import Question from "./Components/Question/Question"
+=======
+import Question from "./Components/Question/Question"
+import Answer from "./Components/Answer/Answer";
+>>>>>>> 0acad686f2d22be86a1bf2de7aeeb5da50326200
 import 'react-toastify/dist/ReactToastify.css';
 import { Toaster } from "react-hot-toast";
 import UpdateProfile from "./Components/UpdateProfile/UpdateProfile";
 import Header from "./Components/Header/Header";
-import Question from "./Components/Add-Question/Question";
+// import Question from "./Components/Add-Question/Question";
 import ViewQuestion from "./Components/ViewQuestion";
 import Stackoverflow from "./Components/Stackoverflow";
 import ContactUs from "./Components/ContactUS/ContactUs";
