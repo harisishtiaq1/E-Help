@@ -27,7 +27,6 @@ function Login() {
     else{
       return toast.error("You are not verified")
     }
-   
   }
   const forget = () => {
     let path = "/Forgot";
