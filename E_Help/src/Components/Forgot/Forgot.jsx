@@ -4,7 +4,7 @@ import { useNavigate } from 'react-router-dom';
 function Forgot() {
     const navigate=useNavigate();
     const homescreen=()=>{
-        let path=("/")
+        let path=("/main")
         navigate(path);
     }
     const reset=()=>{

@@ -96,15 +96,6 @@ function Login() {
             <button type="submit" className="btn mb-3 clr" id="signin-btn">
               Sign in With Google
             </button>
-            <div className="text-center">
-              <span>
-                {" "}
-                New User?{" "}
-                <a onClick={() => signup()} href="">
-                  Create Account
-                </a>
-              </span>
-            </div>
           </form>
         </div>
       </div>

@@ -118,9 +118,6 @@ function Signup() {
                         <button type="submit" className="btn mb-3 clr" id="signup-btn">
                         Sign up With Google
                         </button>
-                        <div className="text-center">
-                            <span>Already have an account? <a href="">Login</a></span>
-                        </div>
                     </form>
                 </div>
             </div>

@@ -24,6 +24,7 @@ function App() {
       <Routes>
       <Route path="/" exact={true} element={<Stackoverflow/>}/>
         <Route path="/login" exact={true} element={<Login/>} />
+        <Route path="/main" exact={true} element={<Login/>} />
         <Route path="/signup" exact={true} element={<Signup/>}/>
         <Route path="/add-question" element={<Question/>}/>
         <Route path="/profile" exact={true} element={<Profile/>}/>
