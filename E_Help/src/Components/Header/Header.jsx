@@ -23,7 +23,9 @@ function Header() {
                 <Link to = '/'>  
                 <img src = {logo} alt = 'logo' />
                </Link>
-                <h3>AboutUs</h3>
+               <div className="text-center">
+                            <span><a onClick={()=>signup()} href="">About Us</a></span>
+                        </div>
             </div>
             <div className="header-middle">
                 <div className="header-search-container">

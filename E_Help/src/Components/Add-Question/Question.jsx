@@ -40,7 +40,13 @@ function Question(){
         </div>
         </div>
         <div className="question-option">
-      
+        <div className="title">
+            <h3>
+            Tags
+            </h3>
+            <small>Add up to 5 tags to your question</small>
+            <div name = "tags" placeHolder="press enter to add new tag"/>
+        </div>
         </div>
         </div>
         </div>

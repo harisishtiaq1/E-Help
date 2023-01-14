@@ -12,7 +12,6 @@ function Login() {
   const navigate = useNavigate();
   const dispatch=useDispatch();
   const user=localStorage.getItem("User")
-
   const profile=()=>{
     console.log("profile routessss")
     if(data){
