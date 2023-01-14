@@ -6,7 +6,8 @@ exports.authenticate =asyncHandler(async (req, res, next) => {
     console.log("check", req.originalUrl.indexOf("/v1/") > -1);
     if (req.originalUrl.indexOf("/v1/") > -1) {
       if ( byPassedRoutes.indexOf(req.originalUrl) > -1
-       ||req.originalUrl.indexOf("/v1/front/auth/verify-email") > -1) {
+       ||req.originalUrl.indexOf("/v1/front/auth/verify-email") > -1
+       ||req.originalUrl.indexOf("/v1/front/auth/contact") > -1) {
         console.log(req.originalUrl);
         next();
       }

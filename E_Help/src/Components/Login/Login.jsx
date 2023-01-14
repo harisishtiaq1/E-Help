@@ -85,7 +85,7 @@ function Login() {
                 Forgot Password?
               </a>
             </div>
-            <button onClick={()=>profile()}  type="submit" className="btn mb-3" id="signin-btn">
+            <button  type="submit" className="btn mb-3" id="signin-btn">
               Sign In
             </button>
             <button type="submit" className="btn mb-3 clr" id="signin-btn">

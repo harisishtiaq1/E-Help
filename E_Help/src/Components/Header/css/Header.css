@@ -69,13 +69,6 @@ header {
     object-fit: contain;
     padding: 0px 0px;
   }
-  
-  .header-left > a > img:hover {
-    background-color: #ddd;
-    cursor: pointer;
-    padding: 10px 0px;
-  }
-  
   .header-left > h3 {
     font-weight: 400;
     font-size: 14px;

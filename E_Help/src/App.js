@@ -15,6 +15,7 @@ import Header from "./Components/Header/Header";
 import Question from "./Components/Add-Question/Question";
 import ViewQuestion from "./Components/ViewQuestion";
 import Stackoverflow from "./Components/Stackoverflow";
+import ContactUs from "./Components/ContactUS/ContactUs";
 function App() {
   return (
   <>
@@ -31,6 +32,7 @@ function App() {
         <Route path="/Forgot" exact={true} element={<Forgot/>}/>
         <Route path="/reset" exact={true} element={<Reset/>}/>
         <Route path="/update" exact={true} element={<UpdateProfile/>}/>
+        <Route path="/contact" exact={true} element={<ContactUs/>}/>
       </Routes>
     </>
   );

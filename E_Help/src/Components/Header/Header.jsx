@@ -16,6 +16,10 @@ function Header() {
     let path = "/signup";
     navigate(path);
   };
+  const contact = () => {
+    let path = "/contact";
+    navigate(path);
+  };
     return (
         <header>
           <div className="header-container">
@@ -27,6 +31,7 @@ function Header() {
                             <span><a onClick={()=>signup()} href="">About Us</a></span>
                         </div>
             </div>
+            
             <div className="header-middle">
                 <div className="header-search-container">
                     <AiOutlineSearch />
@@ -39,6 +44,10 @@ function Header() {
                         <div className="text-center">
                             <span><a onClick={()=>signup()} href="">Signup</a></span>
                         </div>
+                        <div className="text-center">
+                            <span><a onClick={()=>contact()} href="">Contact Us</a></span>
+                        </div>
+                        
             <div className="header-right">
             <div className="header-right-container">
               < div className="icon" /> 

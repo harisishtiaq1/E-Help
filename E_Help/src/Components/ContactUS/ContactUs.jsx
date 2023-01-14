@@ -25,7 +25,8 @@ const onSubmit=(e)=>{
         return
     }
     if(Message.length < 20) {
-        return toast.error("Message Should be 20 Characters long")
+        toast.error("Message Should be 20 Characters long")
+        return
     }
     if(!validateEmail(Email)) {
         return toast.error("Please enter valid email")

@@ -166,7 +166,11 @@ exports.contact = async(req, res) => {
                 Email: contact.Email,
                 Message: contact.Message
             })
-        } else {
+        }
+        if(Message.length< 20){
+            res.json("Message should be 20 characters")
+        }
+         else {
             res.json("Invalid Data")
         }
     } catch (error) {

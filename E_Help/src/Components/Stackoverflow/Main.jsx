@@ -5,16 +5,12 @@ import { BsFillFilterCircleFill } from "react-icons/bs";
 import { Link } from "react-router-dom";
 import AllQuestions from "./AllQuestions";
 function Main(){
-    const nevigate=useNavigate();
-    const question=()=>{
-        let path="/add-question"
-        nevigate(path);
-    }
+    
     return(
         <div className="main">
         <div className="main-container">
         <div className="main-top">
-            <h2>Allquestions</h2>
+            <h2>All Questions</h2>
             <Link to ="/add-question">
             
                 Ask Question
