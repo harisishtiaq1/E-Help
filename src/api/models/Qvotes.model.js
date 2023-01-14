@@ -1,9 +1,6 @@
 const mongoose = require('mongoose');
 
-/**
- * Contact Schema
- * @private
- */
+
 const QVoteSchema = new mongoose.Schema({
   Userid:{createdBy:{ref:"User"}},
   Questionid:{createdBy:{ref:"User"}},

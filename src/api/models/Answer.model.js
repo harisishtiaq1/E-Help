@@ -1,9 +1,6 @@
 const mongoose = require('mongoose');
 
-/**
- * Contact Schema
- * @private
- */
+
 const AnswerSchema = new mongoose.Schema({
   createdBy: { type: mongoose.Schema.Types.ObjectId,required: true, ref: 'User' },
   Questionid:{createdBy:{ref:"User"}},
