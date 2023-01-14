@@ -14,6 +14,7 @@ function Login() {
   const user=localStorage.getItem("User")
   const profile=()=>{
     console.log("profile routessss")
+    console.log("data",data);
     if(data){
       console.log("profile route")
       let path="/profile";
@@ -38,7 +39,8 @@ function Login() {
     e.preventDefault();
     const y = await dispatch(login({Email,Password}));
     console.log("y",y)
-    setdata(y);
+    await setdata(y);
+    profile();
     setEmail("")
     setPassword("");
     if(!Email || !Password) {

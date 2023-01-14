@@ -154,22 +154,21 @@ exports.login = async(req, res) => {
 exports.contact = async(req, res) => {
     try {
         const { Name, Email, Message } = req.body;
-        const contact = await Contact.create({
-            Name,
-            Email,
-            Message,
-        })
-        if (contact) {
-            res.status(201).json({
-                _id: contact.id,
-                Name: contact.Name,
-                Email: contact.Email,
-                Message: contact.Message
-            })
+        if (!Message) {
+            console.log("not message")
+            return res.status(400).send({ status: false, message: "Message should be at least 20 characters!" })
+        }
+        if (Message.length < 20) {
+            return res.status(400).send({ status: false, message: "Message should be at least 20 characters!" })
         }
          else {
-            res.json("Invalid Data")
+            const contact = await Contact.create({
+                Name,
+                Email,
+                Message,
+            })    
         }
+        
     } catch (error) {
         console.log(error);
     }
