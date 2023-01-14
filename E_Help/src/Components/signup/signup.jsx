@@ -91,16 +91,16 @@ function Signup() {
                                name="password"
                             />
                         </div>
-                        {/* <div className="mb-3">
+                        <div className="mb-3">
                             <input
                                 type="file"
-                                placeholder="Password"
+                                placeholder="image"
                                 className="form-control"
                                 value={image}
                                onChange={(e)=>setimage(e.target.value)}
                                name="image"
                             />
-                        </div> */}
+                        </div>
                         <div className="mb-3">
                             <input
                                 type="password"
@@ -119,7 +119,7 @@ function Signup() {
                         Sign up With Google
                         </button>
                         <div className="text-center">
-                            <span>Already have an account? <a onClick={()=>login()} href="">Login</a></span>
+                            <span>Already have an account? <a href="">Login</a></span>
                         </div>
                     </form>
                 </div>
@@ -127,5 +127,4 @@ function Signup() {
         </div>
     )
 }
-
 export default Signup

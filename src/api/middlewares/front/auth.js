@@ -1,5 +1,7 @@
-const jwt=require('jsonwebtoken')
-const User=require("../../models/users.model")
+const jwt=require('jsonwebtoken');
+const User=require("../../models/users.model");
+const bodyParser=require('body-parser');
+
 exports.authenticate =async (req, res, next) => {
     let token;
 
@@ -31,3 +33,9 @@ exports.authenticate =async (req, res, next) => {
     }
   };
 
+  //middleware
+
+  app.use(bodyParser.json({ limit: '50mb'}))
+  app.use(bodyParser.urlencoded({extended: true, limit: "50mb" }))
+  
+  app.use(express.json())
