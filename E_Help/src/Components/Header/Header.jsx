@@ -23,7 +23,7 @@ function Header() {
                 <Link to = '/'>  
                 <img src = {logo} alt = 'logo' />
                </Link>
-               <div className="text-center">
+               <div className="text-center left">
                             <span><a onClick={()=>signup()} href="">About Us</a></span>
                         </div>
             </div>
