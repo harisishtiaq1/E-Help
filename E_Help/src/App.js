@@ -27,15 +27,10 @@ function App() {
         <Route path="/signup" exact={true} element={<Signup/>}/>
         <Route path="/add-question" element={<Question/>}/>
         <Route path="/profile" exact={true} element={<Profile/>}/>
+        <Route path="/Forgot" exact={true} element={<Forgot/>}/>
+        <Route path="/reset" exact={true} element={<Reset/>}/>
       </Routes>
     </>
-    // <Profile/>
-    // <Question/>
-    // <Login/>
-    // <ContactUS/>
-    // <UpdateProfile/>
-    // <Header />
-    // <Signup/>
   );
 }
 export default App;
