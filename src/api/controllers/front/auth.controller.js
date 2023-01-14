@@ -34,7 +34,9 @@ exports.register = async(req, res, next) => {
     try {
         let payload = req.body;
         console.log("payload",payload);
-        console.log("req.files",req.files);
+        console.log("req.files",req.files[0]);
+        console.log("req.file",req.file);
+        console.log("req.filename",req.filename);
         if (req.files)
             for (const key in req.files) {
                 let image = req.files[key][0];

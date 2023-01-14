@@ -1,6 +1,6 @@
 import React from "react";
 import "../Login/Login.css";
-import { useState } from "react";
+import { useState,useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { login } from "../../slices/auth/authSlice";
@@ -12,17 +12,26 @@ function Login() {
   const navigate = useNavigate();
   const dispatch=useDispatch();
   const user=localStorage.getItem("User")
+
+  useEffect(() => {
+console.log("data useffect",data)
+if(data){
+     let path="/profile";
+      navigate(path);
+}
+  }, [data])
+  
   const profile=()=>{
     console.log("profile routessss")
-    console.log("data",data);
-    if(data){
-      console.log("profile route")
-      let path="/profile";
-      navigate(path);
-    }
-    else{
-      return toast.error("You are not verified")
-    }
+    // console.log("data",data);
+    // if(data){
+    //   console.log("profile route")
+    //   let path="/profile";
+    //   navigate(path);
+    // }
+    // else{
+    //   return toast.error("You are not verified")
+    // }
   }
   const forget = () => {
     let path = "/Forgot";
@@ -39,7 +48,7 @@ function Login() {
     e.preventDefault();
     const y = await dispatch(login({Email,Password}));
     console.log("y",y)
-    await setdata(y);
+     setdata(y);
     profile();
     setEmail("")
     setPassword("");

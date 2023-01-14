@@ -6,7 +6,9 @@ const api_url="http://localhost:8000/v1/front/auth/"
 
 const Register=async(userData)=>{
     console.log(userData);
-const response =await axios.post(api_url + "register",userData)
+const response =await axios.post(api_url + "register",userData,{
+    "Content-Type":"multipart/form-data"
+})
 return response.formdata
 }
 // Login User

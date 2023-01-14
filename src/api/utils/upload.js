@@ -1,7 +1,7 @@
 // multer
 const fs = require('fs')
 const multer = require('multer')
-const imagesDir = `./src/uploads/images`
+const imagesDir = `./uploads/images`
 
 const storage = multer.diskStorage({
     destination: function (req, file, cb) {
@@ -9,6 +9,7 @@ const storage = multer.diskStorage({
     },
     filename: function (req, file, cb) {
         var fileExtension = file.mimetype.split("/")[1]
+        console.log("fileExtension",fileExtension)
         if (!file.originalname.toLowerCase().match(/\.(jpg|jpeg|png|gif|svg)$/)) {
             return cb(new Error('Only image files are allowed.'))
         }
