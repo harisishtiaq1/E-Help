@@ -11,10 +11,6 @@ function Login() {
   const [Password,setPassword]=useState("");
   const navigate = useNavigate();
   const dispatch=useDispatch();
-  const signup = () => {
-    let path = "/signup";
-    navigate(path);
-  };
   const user=localStorage.getItem("User")
 
   const profile=()=>{

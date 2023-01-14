@@ -30,6 +30,7 @@ function App() {
         <Route path="/profile" exact={true} element={<Profile/>}/>
         <Route path="/Forgot" exact={true} element={<Forgot/>}/>
         <Route path="/reset" exact={true} element={<Reset/>}/>
+        <Route path="/update" exact={true} element={<UpdateProfile/>}/>
       </Routes>
     </>
   );
